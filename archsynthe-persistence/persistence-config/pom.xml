@@ -6,18 +6,30 @@
         <artifactId>archsynthe-persistence</artifactId>
         <groupId>com.archsynthe.persistence</groupId>
         <version>1.0.0-SNAPSHOT</version>
+        <relativePath>../pom.xml</relativePath>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.archsynthe.persistence</groupId>
     <artifactId>persistence-config</artifactId>
 
-    <dependencies>
-        <dependency>
-            <groupId>org.hibernate.javax.persistence</groupId>
-            <artifactId>hibernate-jpa-2.0-api</artifactId>
-        </dependency>
-    </dependencies>
+    <name>Archsynthe: Persistence: Config</name>
+    <description>
+        Provides persistence support for archsynthe configuration data.  Exposes a JPA-based entity model and a
+        set of managers (updated version of the DAO pattern) for interacting with that model.
+    </description>
+
+    <profiles>
+        <profile>
+            <id>jboss</id>
+            <dependencies>
+                <dependency>
+                    <groupId>org.hibernate.javax.persistence</groupId>
+                    <artifactId>hibernate-jpa-2.0-api</artifactId>
+                </dependency>
+            </dependencies>
+        </profile>
+    </profiles>
 
 
 </project>
