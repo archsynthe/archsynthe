@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>archsynthe</artifactId>
+        <groupId>com.archsynthe</groupId>
+        <version>1.0.0-SNAPSHOT</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.archsynthe.persistence</groupId>
+    <artifactId>archsynthe-persistence</artifactId>
+
+    <packaging>pom</packaging>
+
+    <name>Archsynthe: Persistence</name>
+    <description>
+        Aggregator project which defines the 'com.archsynthe.persistence' namespace.  Modules in this namespace
+        expose a single persistent data source, a set of JPA-based model classes and manager classes to perform
+        persistent operations.
+    </description>
+
+    <modules>
+        <module>persistence-config</module>
+    </modules>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.hibernate.javax.persistence</groupId>
+                <artifactId>hibernate-jpa-2.0-api</artifactId>
+                <version>${hibernate-jpa-2.0-api.version}</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+    <properties>
+        <hibernate-jpa-2.0-api.version>1.0.1.Final</hibernate-jpa-2.0-api.version>
+    </properties>
+
+</project>

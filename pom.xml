@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.archsynthe</groupId>
+    <artifactId>archsynthe</artifactId>
+    <version>1.0.0-SNAPSHOT</version>
+
+    <packaging>pom</packaging>
+
+    <name>Archsynthe</name>
+    <description>
+        A suite of products designed to work together to make the architectural synthesis of software seamless.
+    </description>
+
+    <modules>
+        <module>archsynthe-platform</module>
+        <module>archsynthe-persistence</module>
+        <module>archsynthe-service</module>
+        <module>archsynthe-webservice</module>
+        <module>archsynthe-webapp</module>
+    </modules>
+    
+</project>
