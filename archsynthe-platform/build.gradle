@@ -1,0 +1,13 @@
+/*
+ * Copyright (c) 2012 James Adams
+ * All Rights Reserved
+ */
+
+apply plugin: 'java'
+
+group = 'com.archsynthe.platform'
+version = '1.0.0-SNAPSHOT'
+
+dependencies {
+    compile project(':platform-logging')
+}

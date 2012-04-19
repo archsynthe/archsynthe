@@ -19,6 +19,14 @@
         set of managers (updated version of the DAO pattern) for interacting with that model.
     </description>
 
+    <dependencies>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.8.2</version>
+        </dependency>
+    </dependencies>
+
     <profiles>
         <profile>
             <id>jboss</id>
