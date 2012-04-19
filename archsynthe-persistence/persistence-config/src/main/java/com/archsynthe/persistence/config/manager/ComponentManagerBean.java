@@ -8,14 +8,19 @@ package com.archsynthe.persistence.config.manager;
 import com.archsynthe.persistence.config.model.Component;
 
 /**
- * The ComponentManager interface ...
+ * The ComponentManagerBean class ...
  *
  * @author James Adams
  * @version 1.0.0
  * @since 1.0.0
  */
-public interface ComponentManager {
+public class ComponentManagerBean implements ComponentManager {
 
-	Component create(String name);
+	@Override
+	public Component create(String name) {
+		Component component = new Component();
+		component.setName(name);
+		return component;
+	}
 
 }

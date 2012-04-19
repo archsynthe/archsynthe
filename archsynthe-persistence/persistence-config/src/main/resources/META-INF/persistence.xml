@@ -6,4 +6,5 @@
             Stores configuration data for versioned components within the archsynthe umbrella.
         </description>
     </persistence-unit>
+
 </persistence>
