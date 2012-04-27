@@ -1,6 +1,0 @@
-/*
- * Copyright (c) 2012 James Adams
- * All Rights Reserved
- */
-
-include 'archsynthe-platform', 'archsynthe-persistence', 'archsynthe-service', 'archsynthe-webservice', 'archsynthe-webapp'

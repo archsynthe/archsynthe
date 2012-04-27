@@ -15,7 +15,7 @@
 
     <packaging>pom</packaging>
 
-    <name>Archsynthe: Persistence</name>
+    <name>com.archsynthe.persistence</name>
     <description>
         Aggregator project which defines the 'com.archsynthe.persistence' namespace.  Modules in this namespace
         expose a single persistent data source, a set of JPA-based model classes and manager classes to perform

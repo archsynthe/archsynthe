@@ -10,7 +10,7 @@
 
     <packaging>pom</packaging>
 
-    <name>Archsynthe</name>
+    <name>com.archsynthe</name>
     <description>
         A suite of products designed to work together to make the architectural synthesis of software seamless.
     </description>
@@ -90,7 +90,107 @@
         <maven-jar-plugin.version>2.4</maven-jar-plugin.version>
         <maven-war-plugin.version>2.2</maven-war-plugin.version>
 
+        <com.archsynthe.platform.version>1.0.0-SNAPSHOT</com.archsynthe.platform.version>
+        <com.archsynthe.platform.annotation.version>1.0.0-SNAPSHOT</com.archsynthe.platform.annotation.version>
+        <com.archsynthe.platform.configuration.version>1.0.0-SNAPSHOT</com.archsynthe.platform.configuration.version>
+        <com.archsynthe.platform.logging.version>1.0.0-SNAPSHOT</com.archsynthe.platform.logging.version>
+
+        <com.archsynthe.persistence.version>1.0.0-SNAPSHOT</com.archsynthe.persistence.version>
+        <com.archsynthe.persistence.config.version>1.0.0-SNAPSHOT</com.archsynthe.persistence.config.version>
+
+        <com.archsynthe.service.version>1.0.0-SNAPSHOT</com.archsynthe.service.version>
+        <com.archsynthe.service.directory.version>1.0.0-SNAPSHOT</com.archsynthe.service.directory.version>
+
+        <com.archsynthe.webservice.version>1.0.0-SNAPSHOT</com.archsynthe.webservice.version>
+
+        <com.archsynthe.webapp.version>1.0.0-SNAPSHOT</com.archsynthe.webapp.version>
+
+        <javax.enterprise.cdi-api.version>1.0-SP4</javax.enterprise.cdi-api.version>
+
     </properties>
+
+    <dependencyManagement>
+        <dependencies>
+
+            <!-- Archsynthe Platform -->
+            <dependency>
+                <groupId>com.archsynthe.platform</groupId>
+                <artifactId>archsynthe-platform</artifactId>
+                <version>${com.archsynthe.platform.version}</version>
+                <type>pom</type>
+            </dependency>
+
+            <dependency>
+                <groupId>com.archsynthe.platform</groupId>
+                <artifactId>platform-annotation</artifactId>
+                <version>${com.archsynthe.platform.annotation.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.archsynthe.platform</groupId>
+                <artifactId>platform-configuration</artifactId>
+                <version>${com.archsynthe.platform.configuration.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.archsynthe.platform</groupId>
+                <artifactId>platform-logging</artifactId>
+                <version>${com.archsynthe.platform.logging.version}</version>
+            </dependency>
+
+            <!-- Archsynthe Persistence -->
+            <dependency>
+                <groupId>com.archsynthe.persistence</groupId>
+                <artifactId>archsynthe-persistence</artifactId>
+                <version>${com.archsynthe.persistence.version}</version>
+                <type>pom</type>
+            </dependency>
+
+            <dependency>
+                <groupId>com.archsynthe.persistence</groupId>
+                <artifactId>persistence-config</artifactId>
+                <version>${com.archsynthe.persistence.config.version}</version>
+            </dependency>
+
+            <!-- Archsynthe Service -->
+            <dependency>
+                <groupId>com.archsynthe.service</groupId>
+                <artifactId>archsynthe-service</artifactId>
+                <version>${com.archsynthe.service.version}</version>
+                <type>pom</type>
+            </dependency>
+
+            <dependency>
+                <groupId>com.archsynthe.service</groupId>
+                <artifactId>service-directory</artifactId>
+                <version>${com.archsynthe.service.directory.version}</version>
+            </dependency>
+
+            <!-- Archsynthe Webservice -->
+            <dependency>
+                <groupId>com.archsynthe.webservice</groupId>
+                <artifactId>archsynthe-webservice</artifactId>
+                <version>${com.archsynthe.webservice.version}</version>
+                <type>pom</type>
+            </dependency>
+
+            <!-- Archsynthe Webapp -->
+            <dependency>
+                <groupId>com.archsynthe.webapp</groupId>
+                <artifactId>archsynthe-webapp</artifactId>
+                <version>${com.archsynthe.webapp.version}</version>
+                <type>pom</type>
+            </dependency>
+
+            <!-- Java EE 6 -->
+            <dependency>
+                <groupId>javax.enterprise</groupId>
+                <artifactId>cdi-api</artifactId>
+                <version>${javax.enterprise.cdi-api.version}</version>
+            </dependency>
+
+        </dependencies>
+    </dependencyManagement>
 
     <profiles>
         <profile>
@@ -98,6 +198,32 @@
             <activation>
                 <activeByDefault>true</activeByDefault>
             </activation>
+
+            <properties>
+                <jboss-javaee-6.0.version>1.0.0.Final</jboss-javaee-6.0.version>
+                <arquillian-bom.version>1.0.0.Final</arquillian-bom.version>
+            </properties>
+
+            <dependencyManagement>
+                <dependencies>
+                    <dependency>
+                        <groupId>org.jboss.spec</groupId>
+                        <artifactId>jboss-javaee-6.0</artifactId>
+                        <version>${jboss-javaee-6.0.version}</version>
+                        <type>pom</type>
+                        <scope>provided</scope>
+                    </dependency>
+
+                    <dependency>
+                        <groupId>org.jboss.arquillian</groupId>
+                        <artifactId>arquillian-bom</artifactId>
+                        <version>${arquillian-bom.version}</version>
+                        <scope>import</scope>
+                        <type>pom</type>
+                    </dependency>
+
+                </dependencies>
+            </dependencyManagement>
 
             <repositories>
 
@@ -139,6 +265,7 @@
 
             </repositories>
         </profile>
+
     </profiles>
     
 </project>

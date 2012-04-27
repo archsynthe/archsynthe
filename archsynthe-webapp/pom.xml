@@ -15,7 +15,7 @@
 
     <packaging>pom</packaging>
 
-    <name>Archsynthe: Web App</name>
+    <name>com.archsynthe.webapp</name>
     <description>
         Web Application modules.
     </description>

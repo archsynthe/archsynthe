@@ -10,9 +10,11 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.archsynthe.platform</groupId>
     <artifactId>platform-logging</artifactId>
 
-    <name>Archsynthe: Platform: Logging</name>
+    <name>com.archsynthe.platform.logging</name>
+    <description>
+
+    </description>
 
 </project>

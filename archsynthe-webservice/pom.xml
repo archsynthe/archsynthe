@@ -13,7 +13,7 @@
     <groupId>com.archsynthe.webservice</groupId>
     <artifactId>archsynthe-webservice</artifactId>
 
-    <name>Archsynthe: Web Service</name>
+    <name>com.archsynthe.webservice</name>
     <description>
         Web Service modules.
     </description>

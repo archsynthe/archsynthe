@@ -15,12 +15,14 @@
 
     <packaging>pom</packaging>
 
-    <name>Archsynthe: Platform</name>
+    <name>com.archsynthe.platform</name>
     <description>
         The Archsynthe Platform holds projects which are intended for use as global libraries.
     </description>
     <modules>
+        <module>platform-configuration</module>
         <module>platform-logging</module>
+        <module>platform-annotation</module>
     </modules>
 
 </project>

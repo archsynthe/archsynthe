@@ -13,7 +13,7 @@
     <groupId>com.archsynthe.persistence</groupId>
     <artifactId>persistence-config</artifactId>
 
-    <name>Archsynthe: Persistence: Config</name>
+    <name>com.archsynthe.persistence.config</name>
     <description>
         Provides persistence support for archsynthe configuration data.  Exposes a JPA-based entity model and a
         set of managers (updated version of the DAO pattern) for interacting with that model.

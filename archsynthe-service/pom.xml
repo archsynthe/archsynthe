@@ -15,9 +15,13 @@
 
     <packaging>pom</packaging>
 
-    <name>Archsynthe: Service</name>
+    <name>com.archsynthe.service</name>
     <description>
         Service modules.
     </description>
+
+    <modules>
+        <module>service-directory</module>
+    </modules>
 
 </project>
