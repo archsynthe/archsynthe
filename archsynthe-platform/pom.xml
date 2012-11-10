@@ -23,6 +23,8 @@
         <module>platform-configuration</module>
         <module>platform-logging</module>
         <module>platform-annotation</module>
+        <module>platform-testing</module>
+        <module>platform-rules</module>
     </modules>
 
 </project>

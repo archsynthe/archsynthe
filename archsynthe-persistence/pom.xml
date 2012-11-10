@@ -24,6 +24,7 @@
 
     <modules>
         <module>persistence-config</module>
+        <module>persistence-paradigm</module>
     </modules>
 
     <profiles>
@@ -34,14 +35,53 @@
             </properties>
             <dependencyManagement>
                 <dependencies>
+
                     <dependency>
                         <groupId>org.hibernate.javax.persistence</groupId>
                         <artifactId>hibernate-jpa-2.0-api</artifactId>
                         <version>${hibernate-jpa-2.0-api.version}</version>
                     </dependency>
+
                 </dependencies>
             </dependencyManagement>
         </profile>
+
+        <profile>
+            <id>db-mysql</id>
+            <properties>
+                <mysql-connector-java.version>5.1.9</mysql-connector-java.version>
+            </properties>
+            <dependencyManagement>
+                <dependencies>
+
+                    <dependency>
+                        <groupId>mysql</groupId>
+                        <artifactId>mysql-connector-java</artifactId>
+                        <version>${mysql-connector-java.version}</version>
+                    </dependency>
+
+                </dependencies>
+            </dependencyManagement>
+        </profile>
+
+        <profile>
+            <id>db-postgresql</id>
+            <properties>
+                <postgresql.version>8.3-604.jdbc3</postgresql.version>
+            </properties>
+            <dependencyManagement>
+                <dependencies>
+
+                    <dependency>
+                        <groupId>postgresql</groupId>
+                        <artifactId>postgresql</artifactId>
+                        <version>${postgresql.version}</version>
+                    </dependency>
+
+                </dependencies>
+            </dependencyManagement>
+        </profile>
+
     </profiles>
 
 </project>

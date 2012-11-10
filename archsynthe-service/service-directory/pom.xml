@@ -21,6 +21,10 @@
     <dependencies>
         <dependency>
             <groupId>com.archsynthe.platform</groupId>
+            <artifactId>platform-annotation</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.archsynthe.platform</groupId>
             <artifactId>platform-configuration</artifactId>
         </dependency>
     </dependencies>

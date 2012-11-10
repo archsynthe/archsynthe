@@ -97,6 +97,7 @@
 
         <com.archsynthe.persistence.version>1.0.0-SNAPSHOT</com.archsynthe.persistence.version>
         <com.archsynthe.persistence.config.version>1.0.0-SNAPSHOT</com.archsynthe.persistence.config.version>
+        <com.archsynthe.persistence.paradigm.version>1.0.0-SNAPSHOT</com.archsynthe.persistence.paradigm.version>
 
         <com.archsynthe.service.version>1.0.0-SNAPSHOT</com.archsynthe.service.version>
         <com.archsynthe.service.directory.version>1.0.0-SNAPSHOT</com.archsynthe.service.directory.version>
@@ -150,6 +151,12 @@
                 <groupId>com.archsynthe.persistence</groupId>
                 <artifactId>persistence-config</artifactId>
                 <version>${com.archsynthe.persistence.config.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.archsynthe.persistence</groupId>
+                <artifactId>persistence-config</artifactId>
+                <version>${com.archsynthe.persistence.paradigm.version}</version>
             </dependency>
 
             <!-- Archsynthe Service -->
@@ -264,6 +271,56 @@
                 </repository>
 
             </repositories>
+        </profile>
+
+        <profile>
+            <id>ut-junit</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+
+            <properties>
+                <junit.version>4.10</junit.version>
+            </properties>
+
+            <dependencyManagement>
+                <dependencies>
+                    <dependency>
+                        <groupId>junit</groupId>
+                        <artifactId>junit</artifactId>
+                        <version>${junit.version}</version>
+                    </dependency>
+                </dependencies>
+            </dependencyManagement>
+        </profile>
+
+        <profile>
+            <id>ut-testng</id>
+
+            <properties>
+                <testng.version>6.8</testng.version>
+            </properties>
+
+            <dependencyManagement>
+                <dependencies>
+                    <dependency>
+                        <groupId>org.testng</groupId>
+                        <artifactId>testng</artifactId>
+                        <version>${testng.version}</version>
+                    </dependency>
+                </dependencies>
+            </dependencyManagement>
+        </profile>
+
+        <profile>
+            <id>db-mysql</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+        </profile>
+
+        <profile>
+            <id>db-postgresql</id>
         </profile>
 
     </profiles>

@@ -18,10 +18,10 @@ import javax.persistence.Id;
 @Entity
 public class Component {
 
-	@Id
 	private String id;
 	private String name;
 
+	@Id
 	public String getId() {
 		return id;
 	}

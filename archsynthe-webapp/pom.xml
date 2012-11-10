@@ -20,4 +20,8 @@
         Web Application modules.
     </description>
 
+    <modules>
+        <module>webapp-archsynthe</module>
+    </modules>
+
 </project>
