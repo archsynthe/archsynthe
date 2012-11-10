@@ -3,26 +3,31 @@
  * All Rights Reserved
  */
 
-package com.archsynthe.persistence.paradigm;
+package com.archsynthe.persistence.paradigm.model;
+
 
 import javax.persistence.*;
+import java.util.Set;
 
 /**
- * The Attribute class ...
+ * The Paradigm class ...
  *
  * @author James Adams
  * @version 1.0.0
  * @since 1.0.0
  */
 @Entity
-@Table(schema = "archsynthe", name = "attribute")
-public class Attribute {
+@Table(schema = "archsynthe", name = "paradigm")
+public class Paradigm {
 
+	/**
+	 * Primary key field
+	 */
 	private String id;
 
-	private Component component;
-
 	private String name;
+
+	private Set<Element> elements;
 
 	@Id
 	public String getId() {
@@ -33,15 +38,6 @@ public class Attribute {
 		this.id = id;
 	}
 
-	@ManyToOne
-	public Component getComponent() {
-		return component;
-	}
-
-	public void setComponent(Component component) {
-		this.component = component;
-	}
-
 	public String getName() {
 		return name;
 	}
@@ -49,4 +45,14 @@ public class Attribute {
 	public void setName(String name) {
 		this.name = name;
 	}
+
+	@OneToMany
+	public Set<Element> getElements() {
+		return elements;
+	}
+
+	public void setElements(Set<Element> elements) {
+		this.elements = elements;
+	}
+
 }

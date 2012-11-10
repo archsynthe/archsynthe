@@ -3,7 +3,7 @@
  * All Rights Reserved
  */
 
-package com.archsynthe.persistence.paradigm;
+package com.archsynthe.persistence.paradigm.model;
 
 import javax.persistence.*;
 import java.util.Set;
@@ -13,8 +13,8 @@ import java.util.Set;
  * that can be created.  Instances of each "thing" must be unique in some way.  For example, in the context of writing
  * a book, the "things" of interest are: Chapters, Threads, Characters, Settings, Scenes, etc.  Archsynthe allows the
  * user to define custom classes of "things", and each of these classes of thing are represented as a
- * {@literal Component}.  Within a given modeling paradigm, the name of each Component must be unique.  However,
- * because the components for many paradigms are stored in the same table in a database, we use a separate
+ * {@literal Element}.  Within a given modeling paradigm, the name of each Element must be unique.  However,
+ * because the elements for many paradigms are stored in the same table in a database, we use a separate
  * universally unique identifier (UUID) as a surrogate key, and do not require uniqueness as a constraint on the
  * mapped table.
  *
@@ -23,11 +23,11 @@ import java.util.Set;
  * @since 1.0.0
  */
 @Entity
-@Table(schema = "archsynthe", name = "component")
-public class Component {
+@Table(schema = "archsynthe", name = "element")
+public class Element {
 
 	/**
-	 * A unique identifier (surrogate key) which is modeled as a string-formatted {@link UUID} value.
+	 * A unique identifier (surrogate key) which is modeled as a string-formatted {@link java.util.UUID} value.
 	 */
 	private String id;
 
@@ -78,27 +78,4 @@ public class Component {
 		this.attributes = attributes;
 	}
 
-	@Override
-	public boolean equals(Object o) {
-		if (this == o)
-			return true;
-		if (o == null || getClass() != o.getClass())
-			return false;
-
-		Component component = (Component) o;
-
-		if (!id.equals(component.id))
-			return false;
-		if (!name.equals(component.name))
-			return false;
-
-		return true;
-	}
-
-	@Override
-	public int hashCode() {
-		int result = id.hashCode();
-		result = 31 * result + name.hashCode();
-		return result;
-	}
 }

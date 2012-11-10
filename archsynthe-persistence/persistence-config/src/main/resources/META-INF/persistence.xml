@@ -3,7 +3,7 @@
 
     <persistence-unit name="ConfigPU" transaction-type="JTA">
         <description>
-            Stores configuration data for versioned components within the archsynthe umbrella.
+            Stores configuration data for versioned elements within the archsynthe umbrella.
         </description>
     </persistence-unit>
 

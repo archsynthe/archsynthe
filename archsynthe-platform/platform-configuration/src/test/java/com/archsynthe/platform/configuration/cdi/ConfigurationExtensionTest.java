@@ -75,6 +75,8 @@ public class ConfigurationExtensionTest {
 		assertNotNull(configVersion);
 		assertFalse(configName.isEmpty());
 
+		assertEquals("SUCCESS!",componentWithNameAndVersion.getComponentTestProperty());
+
 	}
 
 	@Test
@@ -93,6 +95,8 @@ public class ConfigurationExtensionTest {
 		assertNotNull(configVersion);
 		assertTrue(configVersion.isEmpty());
 
+		assertEquals("SUCCESS!",componentWithNameNoVersion.getComponentTestProperty());
+
 	}
 
 	@Test
@@ -110,6 +114,8 @@ public class ConfigurationExtensionTest {
 		String configVersion = configurableAnnotation.version();
 		assertNotNull(configVersion);
 		assertFalse(configVersion.isEmpty());
+
+		assertEquals("SUCCESS!",componentWithVersionNoName.getComponentTestProperty());
 
 	}
 

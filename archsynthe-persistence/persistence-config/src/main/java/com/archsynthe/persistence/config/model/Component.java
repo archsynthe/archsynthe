@@ -7,6 +7,7 @@ package com.archsynthe.persistence.config.model;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
 /**
  * The Component class ...
@@ -16,20 +17,13 @@ import javax.persistence.Id;
  * @since 1.0.0
  */
 @Entity
+@Table(schema = "config", name = "component")
 public class Component {
 
-	private String id;
 	private String name;
+	private String version;
 
 	@Id
-	public String getId() {
-		return id;
-	}
-
-	public void setId(String id) {
-		this.id = id;
-	}
-
 	public String getName() {
 		return name;
 	}
@@ -38,27 +32,12 @@ public class Component {
 		this.name = name;
 	}
 
-	@Override
-	public boolean equals(Object o) {
-		if (this == o)
-			return true;
-		if (o == null || getClass() != o.getClass())
-			return false;
-
-		Component component = (Component) o;
-
-		if (!id.equals(component.id))
-			return false;
-		if (!name.equals(component.name))
-			return false;
-
-		return true;
+	@Id
+	public String getVersion() {
+		return version;
 	}
 
-	@Override
-	public int hashCode() {
-		int result = id.hashCode();
-		result = 31 * result + name.hashCode();
-		return result;
+	public void setVersion(String version) {
+		this.version = version;
 	}
 }
