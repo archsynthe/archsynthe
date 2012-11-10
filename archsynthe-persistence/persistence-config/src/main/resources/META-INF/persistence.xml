@@ -5,6 +5,11 @@
         <description>
             Stores configuration data for versioned elements within the archsynthe umbrella.
         </description>
+        <jta-data-source>java:jboss/datasources/ConfigDS</jta-data-source>
+        <shared-cache-mode>ENABLE_SELECTIVE</shared-cache-mode>
+        <properties>
+            <property name="hibernate.cache.use_second_level_cache" value="true"/>
+        </properties>
     </persistence-unit>
 
 </persistence>

@@ -6,6 +6,10 @@
 package com.archsynthe.persistence.config.manager;
 
 import com.archsynthe.persistence.config.model.Component;
+import com.archsynthe.persistence.config.model.ConfigProp;
+
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
 
 /**
  * The ComponentManagerBean class ...
@@ -16,11 +20,29 @@ import com.archsynthe.persistence.config.model.Component;
  */
 public class ComponentManagerBean implements ComponentManager {
 
+	@PersistenceContext(unitName = "ConfigDS")
+	EntityManager entityManager;
+
 	@Override
-	public Component create(String name) {
+	public Component create(String name, String version) {
+		entityManager.getTransaction().begin();
 		Component component = new Component();
+		entityManager.persist(component);
 		component.setName(name);
+		component.setVersion(version);
+		entityManager.getTransaction().commit();
 		return component;
 	}
 
+	@Override
+	public ConfigProp addConfigProp(Component component, String name) {
+		entityManager.getTransaction().begin();
+		ConfigProp prop = new ConfigProp();
+		entityManager.persist(prop);
+		prop.setName(name);
+		prop.setComponent(component);
+		component.getConfigProps().add(prop);
+		entityManager.getTransaction().commit();
+		return prop;
+	}
 }

@@ -6,6 +6,7 @@
 package com.archsynthe.persistence.config.manager;
 
 import com.archsynthe.persistence.config.model.Component;
+import com.archsynthe.persistence.config.model.ConfigProp;
 
 /**
  * The ComponentManager interface ...
@@ -16,6 +17,8 @@ import com.archsynthe.persistence.config.model.Component;
  */
 public interface ComponentManager {
 
-	Component create(String name);
+	Component create(String name, String version);
+
+	ConfigProp addConfigProp(Component component, String name);
 
 }
