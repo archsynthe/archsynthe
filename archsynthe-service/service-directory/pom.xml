@@ -18,6 +18,19 @@
         Directory Service
     </description>
 
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.jboss.as.plugins</groupId>
+                <artifactId>jboss-as-maven-plugin</artifactId>
+                <version>7.1.1.Final</version>
+                <configuration>
+                    <skip>false</skip>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
     <dependencies>
         <dependency>
             <groupId>com.archsynthe.platform</groupId>
@@ -26,6 +39,16 @@
         <dependency>
             <groupId>com.archsynthe.platform</groupId>
             <artifactId>platform-configuration</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.archsynthe.persistence</groupId>
+            <artifactId>persistence-config</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>javax.inject</groupId>
+            <artifactId>javax.inject</artifactId>
+            <version>1</version>
+            <scope>provided</scope>
         </dependency>
     </dependencies>
     

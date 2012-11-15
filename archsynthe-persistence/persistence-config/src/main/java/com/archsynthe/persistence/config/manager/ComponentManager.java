@@ -17,6 +17,8 @@ import com.archsynthe.persistence.config.model.ConfigProp;
  */
 public interface ComponentManager {
 
+	Component lookup(String name, String version);
+
 	Component create(String name, String version);
 
 	ConfigProp addConfigProp(Component component, String name);

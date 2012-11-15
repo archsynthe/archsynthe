@@ -10,6 +10,7 @@ import com.archsynthe.persistence.config.model.ConfigProp;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.persistence.Query;
 
 /**
  * The ComponentManagerBean class ...
@@ -22,6 +23,14 @@ public class ComponentManagerBean implements ComponentManager {
 
 	@PersistenceContext(unitName = "ConfigDS")
 	EntityManager entityManager;
+
+	@Override
+	public Component lookup(String name, String version) {
+		Query query = entityManager.createQuery("select object(c) from Component c where c.name = :name and c.version = :version");
+		query.setParameter("name",name);
+		query.setParameter("version",version);
+		return (Component) query.getSingleResult();
+	}
 
 	@Override
 	public Component create(String name, String version) {
